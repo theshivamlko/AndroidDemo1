@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear1">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="24sp"
+        android:textColor="#ef09ef"
+
+
+        />
+    <TextView
+        android:text="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/textView2"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:gravity="center_vertical"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/edit"
+        android:hint="Enter Password"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:inputType="numberPassword"
+        android:drawableLeft="@mipmap/ic_launcher"/>
+
+
+      <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/edit3"
+        android:hint="Enter Password"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:inputType="numberPassword"
+        android:drawableLeft="@mipmap/ic_launcher"/>
+
+    <!--<android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </android.support.design.widget.TextInputLayout>
+-->
+
+</LinearLayout>
