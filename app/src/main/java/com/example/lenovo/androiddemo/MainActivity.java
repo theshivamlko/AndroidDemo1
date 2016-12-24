@@ -10,7 +10,7 @@ import android.text.Html;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+// Example
 public class MainActivity extends AppCompatActivity {
 
     @Override
