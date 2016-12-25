@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
+
+    <string-array name="category">
+        <item>General</item>
+        <item>OBC</item>
+        <item>ST</item>
+        <item>SC</item>
+    </string-array>
+ <string-array name="state">
+        <item>UP</item>
+        <item>MP</item>
+        <item>Punjab</item>
+        <item>Gujrat</item>
+    </string-array>
+
 </resources>

@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(textView1);  // add the textciew to last of linearlayout i.e end of last child
        // linearLayout.addView(textView1);
 
-
+/*447175805
+        8688*/
 
 
     }
