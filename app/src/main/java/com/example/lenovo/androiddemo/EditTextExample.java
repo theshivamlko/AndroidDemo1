@@ -25,9 +25,11 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_text_example);
-        linearLayout = (LinearLayout)findViewById(R.id.activity_edit_text_example);
+
+        linearLayout = (LinearLayout)findViewById(R.id.activity_edit_text_example);  // using to add view @end of LinearLayout
 
         editText();
+
         button();
 
         radioGroup();
@@ -51,12 +53,20 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         EditText editText1=new EditText(this);
         editText1.setHint("E-Mail");
         editText1.setHintTextColor(Color.CYAN);
-        editText1.setInputType(InputType.TYPE_CLASS_PHONE);
+
+        editText1.setInputType(InputType.TYPE_CLASS_PHONE); // set type of input accept from user
+
         editText1.setFilters(
                 new InputFilter[]{new InputFilter.LengthFilter(10)
-                });
+                });     /*  new InputFilter.LengthFilter(10) meanse Length to be entered will not be >10, OR
+                you can also replace or add in above array - new InputFilter.AllCaps()- to accept input in Capital
+                letters
+
+                */
 
         editText1.setCompoundDrawables(getResources().getDrawable(R.mipmap.ic_launcher),null,null,null);
+        // set drawable @ left of edittext, parameter above follows as left-top-right-bottom, if passed null
+        // no image will be shown
 
         linearLayout.addView(editText1);
 
@@ -79,6 +89,7 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+
         button3.setOnClickListener(onClickListener);
 
         button1.setOnClickListener(this);
@@ -92,15 +103,15 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // buttonView contains the view button-  maniplulate its contents like background
                 if(isChecked)
                     Log.e("MSG","ON");
                 else
                     Log.e("MSG","OFF");
-
             }
         });
 
-        linearLayout.addView(toggleButton);
+        linearLayout.addView(toggleButton);  // add the view to parent layout
 
     }
 
@@ -116,8 +127,6 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
                     Log.e("MSG","MALE");
                 else
                     Log.e("MSG","Female");
-
-
             }
         });
     }
@@ -127,9 +136,10 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
     {
         Spinner spinner=(Spinner)findViewById(R.id.spinner);
 
-        final String[] data= getResources().getStringArray(R.array.state);
+        final String[] data= getResources().getStringArray(R.array.state);  // getting data from string-array in string.xml
 
         spinner.setAdapter(new ArrayAdapter<String>(EditTextExample.this,android.R.layout.simple_spinner_dropdown_item,data));
+        // pass context, layout to be set on each item,data as (Array OR ArrayList mostly Integer and)
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -143,7 +153,6 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
 
             }
         });
-
     }
 
 
