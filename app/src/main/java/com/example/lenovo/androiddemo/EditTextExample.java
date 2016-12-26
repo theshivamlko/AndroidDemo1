@@ -18,8 +18,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.crash.FirebaseCrash;
+
 public class EditTextExample extends AppCompatActivity implements View.OnClickListener {
+
     LinearLayout linearLayout;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +32,19 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_edit_text_example);
 
         linearLayout = (LinearLayout)findViewById(R.id.activity_edit_text_example);  // using to add view @end of LinearLayout
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "shivam");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
         editText();
         button();
         radioGroup();
         spinner();
+
+
 
     }
 
@@ -44,7 +57,6 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         String s=editText.getText().toString();
         String s2=pass.getText().toString();
         Log.e("MSG",""+s+"--"+s2);
-
 
         EditText editText1=new EditText(this);
         editText1.setHint("E-Mail");
@@ -130,7 +142,8 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
 
         final String[] data= getResources().getStringArray(R.array.state);  // getting data from string-array in string.xml
 
-        spinner.setAdapter(new ArrayAdapter<String>(EditTextExample.this,android.R.layout.simple_spinner_dropdown_item,data));
+        spinner.setAdapter(new ArrayAdapter<String>(EditTextExample.this,
+                android.R.layout.simple_spinner_dropdown_item,data));
         // pass context, layout to be set on each item,data as (Array OR ArrayList mostly Integer and)
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -167,7 +180,6 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         @Override
         public void onClick(View v) {
             Log.e("MSG","3333");
-
         }
     };
 }

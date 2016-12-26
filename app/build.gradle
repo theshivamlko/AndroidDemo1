@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.firebase-crash'
 
 android {
     compileSdkVersion 24
@@ -13,7 +14,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -24,6 +25,9 @@ dependencies {
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-auth:10.0.1'
 
 }
 
