@@ -29,13 +29,9 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         linearLayout = (LinearLayout)findViewById(R.id.activity_edit_text_example);  // using to add view @end of LinearLayout
 
         editText();
-
         button();
-
         radioGroup();
-
         spinner();
-
 
     }
 
@@ -79,14 +75,10 @@ public class EditTextExample extends AppCompatActivity implements View.OnClickLi
         Button button2=(Button)findViewById(R.id.button23);
         Button button3=(Button)findViewById(R.id.button24);
 
-
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Log.e("MSG","HELLO");
-
             }
         });
 
