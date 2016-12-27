@@ -7,7 +7,7 @@
         <item>ST</item>
         <item>SC</item>
     </string-array>
- <string-array name="state">
+    <string-array name="state">
         <item>UP</item>
         <item>MP</item>
         <item>Punjab</item>
